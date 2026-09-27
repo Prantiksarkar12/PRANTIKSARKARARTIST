@@ -1,0 +1,116 @@
+import { AiProviderConfig, AiDefaultAssignments, WebsiteBuilderProposal } from '../types';
+
+export const DEFAULT_AI_PROVIDERS: AiProviderConfig[] = [
+  {
+    id: 'prov_gemini_flash',
+    name: 'Google Gemini (Production)',
+    provider_type: 'gemini',
+    api_key: '••••••••••••••••••••••••••••••••••••••',
+    api_endpoint: 'https://generativelanguage.googleapis.com',
+    model: 'gemini-3.8-flash',
+    plan: 'Free',
+    is_enabled: true,
+    is_primary: true,
+    status: 'Connected',
+    last_tested_at: new Date().toISOString(),
+    created_at: new Date('2026-01-01').toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: 'prov_gemini_pro',
+    name: 'Google Gemini Pro (Reasoning & Coding)',
+    provider_type: 'gemini',
+    api_key: '••••••••••••••••••••••••••••••••••••••',
+    api_endpoint: 'https://generativelanguage.googleapis.com',
+    model: 'gemini-3.1-pro-preview',
+    plan: 'Paid',
+    is_enabled: true,
+    is_primary: false,
+    status: 'Connected',
+    last_tested_at: new Date().toISOString(),
+    created_at: new Date('2026-01-01').toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+  {
+    id: 'prov_custom_backup',
+    name: 'Custom Enterprise Provider (Backup)',
+    provider_type: 'custom',
+    api_key: '••••••••••••••••',
+    api_endpoint: 'https://api.prantiksarkar.com/ai/v1',
+    model: 'prantik-orchestrator-v2',
+    plan: 'Paid',
+    is_enabled: false,
+    is_primary: false,
+    status: 'Disconnected',
+    created_at: new Date('2026-01-01').toISOString(),
+    updated_at: new Date().toISOString(),
+  },
+];
+
+export const DEFAULT_AI_ASSIGNMENTS: AiDefaultAssignments = {
+  user_chat_provider_id: 'prov_gemini_flash',
+  website_builder_provider_id: 'prov_gemini_pro',
+  coding_provider_id: 'prov_gemini_pro',
+  research_provider_id: 'prov_gemini_flash',
+  image_provider_id: 'prov_gemini_flash',
+  video_provider_id: 'prov_gemini_flash',
+  voice_provider_id: 'prov_gemini_flash',
+  failover_backup_provider_id: 'prov_custom_backup',
+  auto_fallback_enabled: true,
+  health_check_enabled: true,
+  rate_limit_detection: true,
+};
+
+export const DEFAULT_WEBSITE_BUILDER_VERSIONS: WebsiteBuilderProposal[] = [
+  {
+    id: 'wb_ver_01',
+    prompt: 'Initialize artist website with dark theme, catalog, and official releases.',
+    title: 'Baseline Official Platform Release',
+    summary: 'Core layout, audio player, releases grid, video archives, and tour dates.',
+    files_changed: ['src/App.tsx', 'src/pages/CatalogPages.tsx'],
+    changes: [
+      {
+        action: 'UPDATE_THEME',
+        details: 'Applied cinematic black and crimson brand aesthetics.',
+      },
+    ],
+    status: 'APPROVED_PUBLISHED',
+    created_at: new Date('2026-01-15').toISOString(),
+    published_at: new Date('2026-01-15').toISOString(),
+    version_number: 1,
+  },
+  {
+    id: 'wb_ver_02',
+    prompt: 'Add 150+ music platform directory with searchable filters and verified destinations.',
+    title: 'Listen Everywhere Architecture',
+    summary: 'Searchable 155+ streaming platform database, A-Z index, and Admin Platform Manager.',
+    files_changed: ['src/components/music/ListenEverywhere.tsx', 'src/services/musicPlatformsData.ts'],
+    changes: [
+      {
+        action: 'ADD_PLATFORM',
+        details: 'Configured global streaming platforms, Asian hubs, DJ record pools, and radio destinations.',
+      },
+    ],
+    status: 'APPROVED_PUBLISHED',
+    created_at: new Date('2026-02-01').toISOString(),
+    published_at: new Date('2026-02-01').toISOString(),
+    version_number: 2,
+  },
+  {
+    id: 'wb_ver_03',
+    prompt: 'Add direct contact departments for Booking, Collaborations, Sponsorships, Promotion, and Copyright.',
+    title: 'Official Department Inboxes & Management',
+    summary: 'Added departmental routing cards and Admin Contact Manager for dynamic email governance.',
+    files_changed: ['src/pages/CatalogPages.tsx', 'src/components/admin/contacts/AdminContactManager.tsx'],
+    changes: [
+      {
+        action: 'UPDATE_SECTION',
+        details: 'Updated contact section with direct email and clipboard copy actions.',
+      },
+    ],
+    status: 'APPROVED_PUBLISHED',
+    created_at: new Date('2026-02-15').toISOString(),
+    published_at: new Date('2026-02-15').toISOString(),
+    version_number: 3,
+  },
+];

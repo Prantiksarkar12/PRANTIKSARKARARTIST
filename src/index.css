@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-display: 'Syne', sans-serif;
+    --font-serif: 'Cinzel', serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background-color: #070709;
+    color: #f4f4f5;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+  }
+}
+
+/* Custom dark luxury utility accents */
+.bg-matte-black {
+  background-color: #08080a;
+}
+.bg-deep-charcoal {
+  background-color: #111115;
+}
+.bg-card-dark {
+  background-color: #131318;
+}
+.border-subtle {
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.border-crimson-glow {
+  border-color: rgba(225, 29, 72, 0.3);
+}
+.text-crimson-accent {
+  color: #e11d48;
+}
+.text-gold-accent {
+  color: #f59e0b;
+}
+.bg-crimson-glow {
+  background: radial-gradient(circle, rgba(225, 29, 72, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+}
+.bg-gold-glow {
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.1) 0%, rgba(0, 0, 0, 0) 70%);
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #070709;
+}
+::-webkit-scrollbar-thumb {
+  background: #27272a;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3f3f46;
+}

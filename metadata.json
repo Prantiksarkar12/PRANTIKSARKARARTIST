@@ -1,0 +1,6 @@
+{
+  "name": "Prantik Sarkar Official Website",
+  "description": "The official digital platform for Prantik Sarkar — Artist, Rapper & Creator. Music, releases, videos, tour dates, press, and creative works.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
